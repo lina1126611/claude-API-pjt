@@ -20,7 +20,8 @@ app = FastAPI(title="Fridge Recipe App")
 class RecipeRequest(BaseModel):
     ingredients: list[str]
 
-app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+if STATIC_DIR.is_dir():
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
 @app.get("/")
