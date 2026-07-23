@@ -7,6 +7,24 @@
 </head>
 <body>
   <main>
+    <section id="authSection" class="auth-box">
+      <div id="authLoggedOut">
+        <form id="authForm" class="auth-form">
+          <input type="email" id="authEmail" placeholder="이메일" required />
+          <input type="password" id="authPassword" placeholder="비밀번호 (6자 이상)" required minlength="6" />
+          <div class="auth-buttons">
+            <button type="submit" id="loginBtn">로그인</button>
+            <button type="button" id="signupBtn">회원가입</button>
+          </div>
+        </form>
+        <p id="authStatus" class="status" hidden></p>
+      </div>
+      <div id="authLoggedIn" hidden>
+        <p><span id="authEmailLabel"></span>님 로그인됨</p>
+        <button type="button" id="logoutBtn">로그아웃</button>
+      </div>
+    </section>
+
     <h1>냉장고 사진으로 식재료 인식하기</h1>
     <p class="subtitle">Step 1 — 이미지를 업로드하면 AI가 냉장고 안의 식재료를 인식합니다.</p>
 
@@ -36,7 +54,13 @@
       <h2>추천 레시피</h2>
       <div id="recipeList"></div>
     </section>
+
+    <section id="savedRecipesSection" class="result" hidden>
+      <h2>내가 저장한 레시피</h2>
+      <p id="savedRecipesStatus" class="status" hidden></p>
+      <div id="savedRecipeList"></div>
+    </section>
   </main>
-  <script src="/static/app.js"></script>
+  <script type="module" src="/static/app.js"></script>
 </body>
 </html>

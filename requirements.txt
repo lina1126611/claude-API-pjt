@@ -5,3 +5,4 @@ python-dotenv
 requests
 Pillow
 pillow-avif-plugin
+supabase

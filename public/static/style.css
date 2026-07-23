@@ -160,3 +160,55 @@ button:disabled {
   margin: 0.4rem 0 0;
   padding-left: 1.2rem;
 }
+
+.recipe-card button {
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.recipe-card button.danger {
+  background: transparent;
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+
+.auth-box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.auth-form input {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.auth-buttons button[type="button"] {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+#authLoggedIn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
