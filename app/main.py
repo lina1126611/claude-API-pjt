@@ -13,6 +13,7 @@ logger = logging.getLogger("uvicorn.error")
 BASE_DIR = Path(__file__).resolve().parent.parent
 PUBLIC_DIR = BASE_DIR / "public"
 STATIC_DIR = PUBLIC_DIR / "static"
+TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 
 app = FastAPI(title="Fridge Recipe App")
 
@@ -26,7 +27,7 @@ if STATIC_DIR.is_dir():
 
 @app.get("/")
 def index():
-    return FileResponse(PUBLIC_DIR / "index.html")
+    return FileResponse(TEMPLATES_DIR / "index.html")
 
 
 @app.post("/api/recognize")
