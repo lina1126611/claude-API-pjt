@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>냉장고 사진으로 레시피 추천받기</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main>
+    <h1>냉장고 사진으로 식재료 인식하기</h1>
+    <p class="subtitle">Step 1 — 이미지를 업로드하면 AI가 냉장고 안의 식재료를 인식합니다.</p>
+
+    <div class="upload-box" id="dropZone">
+      <input type="file" id="fileInput" accept="image/*" hidden />
+      <img id="preview" hidden />
+      <p id="dropHint">클릭하거나 이미지를 드래그해서 업로드하세요</p>
+    </div>
+
+    <button id="recognizeBtn" disabled>식재료 인식하기</button>
+
+    <section id="status" class="status" hidden></section>
+
+    <section id="result" class="result" hidden>
+      <h2>인식된 식재료</h2>
+      <ul id="ingredientList"></ul>
+      <form id="addForm">
+        <input type="text" id="addInput" placeholder="재료 직접 추가" />
+        <button type="submit">추가</button>
+      </form>
+      <button id="recipeBtn">이 재료로 레시피 추천받기</button>
+    </section>
+
+    <section id="recipeStatus" class="status" hidden></section>
+
+    <section id="recipeResult" class="result" hidden>
+      <h2>추천 레시피</h2>
+      <div id="recipeList"></div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
