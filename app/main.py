@@ -11,7 +11,8 @@ from .openrouter import OpenRouterError, generate_recipes, recognize_ingredients
 logger = logging.getLogger("uvicorn.error")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = BASE_DIR / "static"
+PUBLIC_DIR = BASE_DIR / "public"
+STATIC_DIR = PUBLIC_DIR / "static"
 
 app = FastAPI(title="Fridge Recipe App")
 
@@ -24,7 +25,7 @@ app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 @app.get("/")
 def index():
-    return FileResponse(STATIC_DIR / "index.html")
+    return FileResponse(PUBLIC_DIR / "index.html")
 
 
 @app.post("/api/recognize")
